@@ -1,0 +1,23 @@
+<form (ngSubmit)="submitReview()">
+    <div class="mb-3">
+      <label for="rating" class="form-label">Rating:</label>
+      <div id="rating" class="star-rating">
+        <span *ngFor="let i of [1, 2, 3, 4, 5]; let index = index" 
+              [ngClass]="{'filled': index < review.rating}" 
+              (click)="setRating(i)">
+          ★
+        </span>
+      </div>
+    </div>
+    <div class="mb-3">
+        <label for="comment" class="form-label">Your review</label>
+        <textarea [(ngModel)]="review.comment" 
+                  class="form-control" 
+                  name="comment" 
+                  id="comment" 
+                  rows="4" 
+                  required></textarea>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit Review</button>
+  </form>
+  

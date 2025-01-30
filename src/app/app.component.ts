@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterRenderOptions, AfterRenderPhase, AfterViewChecked, AfterViewInit, Component, DoCheck, Injector, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+//import { Product } from './model/product';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,17 @@ import { Component } from '@angular/core';
   standalone: false,
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'review-site';
+export class AppComponent implements OnInit {
+  
+  title = 'Review Site';
+
+
+  constructor(){
+    
+  }
+
+  ngOnInit(): void {
+    
+  }
+
 }

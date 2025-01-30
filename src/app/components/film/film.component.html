@@ -1,0 +1,20 @@
+<h2>Filmi</h2>
+<div class="scroll-container" (wheel)="onWheel($event)">
+  <div class="scroll-items">
+    @for(film of filmList; track film; let i = $index) {
+      <div class="card snap-item">
+        <img [src]="film.srcImg" class="card-img-top img" [alt]="film.title" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ film.title }}</h5>
+          <p class="card-text">
+            Directed by {{ film.director }}, Released: {{ film.releaseYear }}
+          </p>
+          <p class="card-text">{{ film.description }}</p>
+          <div class="mt-auto">
+            <a [routerLink]="['/reviews/film', film.id]" class="btn btn-primary">Leave a review</a>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

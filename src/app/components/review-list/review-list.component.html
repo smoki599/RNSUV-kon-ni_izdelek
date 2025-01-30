@@ -1,0 +1,18 @@
+<div *ngIf="reviews.length > 0" class="review-section">
+  <h3 class="review-title">Customer Reviews</h3>
+  <ul class="review-list">
+    <li *ngFor="let review of reviews" class="review-card">
+      <div class="review-header">
+        <strong class="review-user">{{ review.userId }}</strong>
+        <div class="review-stars">
+          <span *ngFor="let star of [1, 2, 3, 4, 5]" class="star" [class.filled]="star <= review.rating">★</span>
+        </div>
+      </div>
+      <div class="review-comment">{{ review.comment }}</div>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="reviews.length === 0" class="no-reviews">
+  No reviews yet. Be the first to review! 😊
+</div>
